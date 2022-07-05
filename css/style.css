@@ -1,0 +1,314 @@
+/*Reset*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: "DeliusUnicase-Regular";
+  src: url(../../assets/fonts/AnyConv.com__DeliusUnicase-Regular.woff);
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url(../../assets/fonts/AnyConv.com__Roboto-Medium.woff);
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url(../../assets/fonts/AnyConv.com__Roboto-Regular.woff);
+}
+:root {
+  --font-family-dr: "DeliusUnicase-Regular", sans-serif;
+  --font-family-rm: "Roboto-Medium", sans-serif;
+  --font-family-rr: "Roboto-Regular", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 9.375vw;
+}
+
+h2 {
+  font-family: var(--font-family-dr);
+  font-size: 2.5vw;
+  /* identical to box height */
+  letter-spacing: 0.05em;
+  text-align: center;
+  line-height: 3.125vw;
+  margin-bottom: 5.55vw;
+}
+
+section {
+  margin-top: 8.33vw;
+  position: relative;
+}
+
+.cities__gallery {
+  display: grid;
+  grid-gap: 2.083vw;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas: "melgoza tom     tom" "mouchet mouchet dio" "horner  rotker  rotker";
+  perspective: 1000px;
+}
+.cities__item-melgoza {
+  grid-area: melgoza;
+}
+.cities__img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+.cities__item-tom {
+  grid-area: tom;
+}
+.cities__item-mouchet {
+  grid-area: mouchet;
+}
+.cities__item-dio {
+  grid-area: dio;
+}
+.cities__item-horner {
+  grid-area: horner;
+}
+.cities__item-rotker {
+  grid-area: rotker;
+}
+
+.item {
+  position: relative;
+  -webkit-margin-start: unset;
+          margin-inline-start: unset;
+  -webkit-margin-end: unset;
+          margin-inline-end: unset;
+  -webkit-margin-before: unset;
+          margin-block-start: unset;
+  -webkit-margin-after: unset;
+          margin-block-end: unset;
+  cursor: pointer;
+  transition: 1s;
+}
+.item:hover {
+  transition: 1s;
+  z-index: 4;
+}
+.item:hover label {
+  z-index: 2;
+}
+.item__link--gradient {
+  transition: 1s;
+}
+.item__link--gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 20px;
+  /* blure-fore-portrait */
+  background: linear-gradient(270deg, #241F24 0%, rgba(91, 91, 91, 0.447552) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
+}
+.item__link--gradient:hover {
+  border-radius: 20px;
+}
+.item__link--gradient:hover::after {
+  /* hover-overlay */
+  background: linear-gradient(270deg, #241F24 1.04%, rgba(91, 91, 91, 0.26) 6.99%, rgba(187, 186, 192, 0) 12.29%);
+}
+.item__name {
+  left: 20px;
+  font-family: var(--font-family-rm);
+}
+.item__date {
+  right: 20px;
+  font-family: var(--font-family-rr);
+}
+.item__toggle {
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(224, 224, 224, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.item__toggle:hover {
+  background: #E0E0E0;
+  transition: 1s;
+}
+.item__toggle--left {
+  left: 20px;
+}
+.item__toggle--right {
+  right: 20px;
+}
+.item__icon {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.item img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.item span {
+  position: absolute;
+  bottom: 1.39vw;
+  font-size: 1.39vw;
+  line-height: 23px;
+  color: #ffffff;
+}
+
+.nature__gallery {
+  display: grid;
+  grid-gap: 2.083vw;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas: "lukeman oulashin oulashin" "fowler  fowler   hoefler" "fowler  fowler   hoefler" "cotte   cotte    mulally";
+}
+.nature__item-lukeman {
+  grid-area: lukeman;
+}
+.nature__item-oulashin {
+  grid-area: oulashin;
+}
+.nature__item-fowler {
+  grid-area: fowler;
+}
+.nature__item-hoefler {
+  grid-area: hoefler;
+}
+.nature__item-cotte {
+  grid-area: cotte;
+}
+.nature__item-mulally {
+  grid-area: mulally;
+}
+
+.portrait__gallery {
+  display: grid;
+  grid-gap: 2.083vw;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas: "chaudhary hill   doyle" "devn      hill   buscher" "media     sdoyle buscher" "media     askew  askew" "cagle     cagle  onojeghuo";
+}
+.portrait__item-chaudhary {
+  grid-area: chaudhary;
+}
+.portrait__item-hill {
+  grid-area: hill;
+}
+.portrait__item-doyle {
+  grid-area: doyle;
+}
+.portrait__item-devn {
+  grid-area: devn;
+}
+.portrait__item-buscher {
+  grid-area: buscher;
+}
+.portrait__item-media {
+  grid-area: media;
+}
+.portrait__item-sdoyle {
+  grid-area: sdoyle;
+}
+.portrait__item-askew {
+  grid-area: askew;
+}
+.portrait__item-cagle {
+  grid-area: cagle;
+}
+.portrait__item-onojeghuo {
+  grid-area: onojeghuo;
+}/*# sourceMappingURL=style.css.map */

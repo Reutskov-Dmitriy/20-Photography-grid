@@ -1,0 +1,315 @@
+@import 'reset';
+@import 'vars';
+
+.container {
+	margin: 0 auto;
+	max-width: 1440px;
+	padding: 0 9.375vw;	
+}
+h2{
+	
+	font-family: var(--font-family-dr);
+	font-size: 2.5vw;
+	/* identical to box height */
+	letter-spacing: 0.05em;
+	text-align: center;
+	line-height: 3.125vw;
+	margin-bottom: 5.55vw;
+}
+section{
+	margin-top: 8.33vw;
+	position: relative;
+}
+
+.cities {
+	
+
+	&__gallery {
+		display: grid;
+		grid-gap: 2.083vw;
+		grid-template-columns: repeat(3, auto);
+		grid-template-areas: 
+		"melgoza tom     tom"
+		"mouchet mouchet dio"
+		"horner  rotker  rotker";
+		perspective: 1000px;		
+	}
+
+	
+	&__item-melgoza {
+		grid-area: melgoza;
+	}
+
+	&__img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: cover;
+		border-radius: 20px;
+		
+	}
+
+	&__item-tom {
+		grid-area: tom;
+	}
+
+	&__item-mouchet {
+		grid-area: mouchet;
+	}
+
+	&__item-dio {
+		grid-area: dio;
+	}
+
+	&__item-horner {
+		grid-area: horner;
+	}
+
+	&__item-rotker {
+		grid-area: rotker;
+	}
+}
+
+// @media  (max-width: 450px){
+// 	.cities,
+// 	.nature,
+// 	.portrait{
+// 		display: grid;
+// 		grid-template-columns: 31.25vw;
+// 		grid-template-areas:
+// 		"item-img" "item-img" "item-img" "item-img" "item-img" "item-img" "item-img" "item-img";
+		
+// 	}
+// 	.item{
+// 		grid-area: item-img;
+// 	}
+// }
+	
+
+
+.item{
+	position: relative;
+	margin-inline-start: unset;
+	margin-inline-end: unset;
+	margin-block-start: unset;
+	margin-block-end: unset;
+	cursor: pointer;
+	transition: 1s;
+	
+	
+	&:hover{
+		transition: 1s;
+		// transform: scale(1.5);
+		z-index: 4;
+		& label{
+			z-index: 2;
+			
+		}
+		
+	}
+
+	&__link--gradient{
+				
+		transition: 1s;
+		
+		
+
+		&::after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			border-radius: 20px;
+			
+		/* blure-fore-portrait */
+		background: linear-gradient(270deg, #241F24 0%, rgba(91, 91, 91, 0.447552) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
+		}
+
+		&:hover{
+			&::after{
+				/* hover-overlay */
+				background: linear-gradient(270deg, #241F24 1.04%, rgba(91, 91, 91, 0.26) 6.99%, rgba(187, 186, 192, 0) 12.29%);
+			}
+			border-radius: 20px;
+		}
+	}
+	
+	&__name{
+		left: 20px;
+		font-family: var(--font-family-rm);
+	}
+	&__date{
+		right: 20px;
+		font-family: var(--font-family-rr);
+	}
+
+	
+	
+	&__toggle {
+		position: absolute;
+		z-index: -1;
+		top: 20px;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(224, 224, 224, 0.5);
+		border-radius: 8px;
+		cursor: pointer;
+
+		&:hover{
+		background: #E0E0E0;
+		transition: 1s;
+		
+		
+		
+	}
+	}
+
+	&__toggle--left{
+		left: 20px;
+	}
+	&__toggle--right{
+		
+		right: 20px;
+	}
+
+
+	&__icon {
+		max-width: 20px;
+		max-height: 20px;
+	}
+
+
+}
+.item img{
+	border-radius: 20px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+	
+	
+}
+.item a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+
+}
+.item span{
+	position: absolute;
+	bottom: 1.39vw;
+	
+	font-size: 1.39vw;
+	line-height: 23px;
+	color: #ffffff;
+
+}
+// SECTION NATURE
+
+.nature {
+	
+	&__gallery {
+		display: grid;
+		grid-gap: 2.083vw;
+		grid-template-columns: repeat(3, auto);
+		grid-template-areas: 
+		"lukeman oulashin oulashin"
+		"fowler  fowler   hoefler"
+		"fowler  fowler   hoefler"
+		"cotte   cotte    mulally";
+	}
+
+	&__item-lukeman {
+		grid-area: lukeman;
+	}
+
+	
+
+	&__item-oulashin {
+		grid-area: oulashin;
+	}
+
+	&__item-fowler {
+		grid-area: fowler;
+	}
+
+	&__item-hoefler {
+		grid-area: hoefler;
+	}
+
+	&__item-cotte {
+		grid-area: cotte;
+	}
+
+	&__item-mulally {
+		grid-area: mulally;
+	}
+}
+
+
+// SECTION PORTRAIT
+
+.portrait {
+
+	
+
+	&__gallery {
+		display: grid;
+		grid-gap: 2.083vw;
+		grid-template-columns: repeat(3, auto);
+		grid-template-areas: 
+		"chaudhary hill   doyle"
+		"devn      hill   buscher"
+		"media     sdoyle buscher"
+		"media     askew  askew"
+		"cagle     cagle  onojeghuo";
+	}
+
+	&__item-chaudhary {
+		grid-area: chaudhary;
+	}
+
+	&__item-hill {
+		grid-area: hill;
+	}
+
+	&__item-doyle {
+		grid-area: doyle;
+	}
+
+	&__item-devn {
+		grid-area: devn;
+	}
+
+	&__item-buscher {
+		grid-area: buscher;
+	}
+
+	&__item-media {
+		grid-area: media;
+	}
+
+	&__item-sdoyle {
+		grid-area: sdoyle;
+	}
+
+	&__item-askew {
+		grid-area: askew;
+	}
+
+	&__item-cagle {
+		grid-area: cagle;
+	}
+
+	&__item-onojeghuo {
+		grid-area: onojeghuo;
+	}
+}
+
+
+

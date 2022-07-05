@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "DeliusUnicase-Regular";
+  src: url(../../assets/fonts/AnyConv.com__DeliusUnicase-Regular.woff);
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url(../../assets/fonts/AnyConv.com__Roboto-Medium.woff);
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url(../../assets/fonts/AnyConv.com__Roboto-Regular.woff);
+}
+:root {
+  --font-family-dr: "DeliusUnicase-Regular", sans-serif;
+  --font-family-rm: "Roboto-Medium", sans-serif;
+  --font-family-rr: "Roboto-Regular", sans-serif;
+}/*# sourceMappingURL=vars.css.map */
